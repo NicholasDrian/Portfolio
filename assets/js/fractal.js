@@ -190,7 +190,7 @@ var Run = function () {
      var center = [-0.981972213, -0.282552557];
     
      window.addEventListener('mousemove', (event) => {
-        gl.uniform2fv(mouseLocation, new Float32Array([event.clientX, event.clientY]));
+        gl.uniform2fv(mouseLocation, new Float32Array([event.clientX, event.clientY + document.documentElement.scrollTop]));
     });
 
     var iter = 0;
