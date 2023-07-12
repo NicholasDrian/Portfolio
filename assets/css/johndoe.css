@@ -68,6 +68,12 @@ body {
   outline: 0 !important;
 }
 
+canvas {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -11499,8 +11505,6 @@ pre .code {
   position: relative;
   height: 80vh;
   min-height: 600px;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11538,10 +11542,15 @@ pre .code {
 }
 
 .header .header-content .header-mono {
+
   letter-spacing: 5px;
   font-weight: 500;
   font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
   margin-bottom: 40px;
+}
+
+.header-mono {
+  opacity:0.8;
 }
 
 @media (max-width: 767.98px) {
@@ -11563,11 +11572,16 @@ pre .code {
 .header-title {
   font-size: 2.4rem;
   font-weight: bold;
-  opacity: .8;
+  opacity: 0.9;
   color: #212529;
 }
 
+.header-subtitle {
+  opacity: 0.9;
+}
+
 .header-mini {
+  opacity: 0.9;
   min-height: 24rem;
   height: 24rem;
   display: -webkit-box;
@@ -11665,13 +11679,4 @@ pre .code {
 
 .contact .contact-title {
   margin-bottom: 30px;
-}
-
-.contact .contact-title::after {
-  content: '';
-  width: 20px;
-  height: 2px;
-  background: #F85C70;
-  display: block;
-  margin-top: 10px;
 }

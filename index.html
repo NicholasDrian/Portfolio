@@ -11,24 +11,29 @@
     <!-- Bootstrap + JohnDoe main styles -->
 	<link rel="stylesheet" href="assets/css/johndoe.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <header class="header">
-        <div class="container">
-             
-            <div class="header-content">
-                <h4 class="header-subtitle" >Hello, I am</h4>
-                <h1 class="header-title">Nick Drian</h1>
-                <h6 class="header-mono" >Softwear Engineer | Computer Graphics</h6>
-                <ul class="social-icons pt-3">
-                <li>
-                    <button class="btn btn-primary btn-rounded"><i class="ti-download pr-2"></i>Download Resume</button>
-                </li>
-                    <li><a class="social-link text-light" href="https://github.com/NicholasDrian"><i class="ti-github" aria-hidden="true"></i></a>
-                </li>
-                </ul>
-            </div>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" onload="Init();">
+
+    <canvas id="screen" height="400"> </canvas>
+
+    <div class="container">
+        <div class="header-content">
+            <br><br><br><br><br>
+            <h4 class="header-subtitle">Hello, I am</h4>
+            <h1 class="header-title">Nick Drian</h1>
+            <h6 class="header-mono" >Softwear Engineer | Computer Graphics</h6>
+            <ul class="social-icons pt-3">
+            <li>
+                <button class="btn btn-primary btn-rounded header-subtitle"><i class="ti-download pr-2"></i>Download Resume</button>
+            </li>
+                <li><a class="social-link text-light" href="https://github.com/NicholasDrian"><i class="ti-github" aria-hidden="true"></i></a>
+            </li>
+            </ul>
+            <br><br>
         </div>
-    </header>
+    </div>
+
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
         <div class="container">
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,8 +54,8 @@
                 <ul class="navbar-nav brand">
                     <img src="assets/imgs/portrait.jpeg" alt="" class="brand-img">
                     <li class="brand-txt">
-                        <h5 class="brand-title">John Doe</h5>
-                        <div class="brand-subtitle">Web Designer | Developer</div>
+                        <h5 class="brand-title">Nick Drian</h5>
+                        <div class="brand-subtitle">Softwear Engineer | Computer Graphics</div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -130,7 +135,7 @@
                        <div class="card-header">
                             <div class="mt-2">
                                 <h4>Work Experience</h4>
-                                <span class="line"></span>  
+                                  
                             </div>
                         </div>
                         <div class="card-body">
@@ -148,7 +153,7 @@
                        <div class="card-header">
                             <div class="mt-2">
                                 <h4>Education</h4>
-                                <span class="line"></span>  
+                                  
                             </div>
                         </div>
                         <div class="card-body">
@@ -172,7 +177,7 @@
                        <div class="card-header">
                             <div class="pull-left">
                                 <h4 class="mt-2">Skills</h4>
-                                <span class="line"></span>  
+                                  
                             </div>
                         </div>
                         <div class="card-body pb-2">
@@ -187,7 +192,7 @@
                        <div class="card-header">
                             <div class="pull-left">
                                 <h4 class="mt-2">Languages</h4>
-                                <span class="line"></span>  
+                                  
                             </div>
                         </div>
                         <div class="card-body pb-2">
@@ -205,7 +210,7 @@
                         <div class="card-header">
                              <div class="pull-left">
                                  <h4 class="mt-2">APIs / Libraries</h4>
-                                 <span class="line"></span>  
+                                   
                              </div>
                          </div>
                          <div class="card-body pb-2">
@@ -757,6 +762,9 @@
 
     <!-- JohnDoe js -->
     <script src="assets/js/johndoe.js"></script>
+
+    <!-- Fractal js -->
+    <script src="assets/js/fractal.js"></script>
 
 </body>
 </html>
