@@ -124,6 +124,9 @@ var Run = function () {
 
         void main(void) {
 
+            
+
+
             float x = gl_FragCoord.x / width - 0.5; // -0.5 : 0.5
             float y = (gl_FragCoord.y / height - 0.5) * height / width;
 
@@ -143,6 +146,17 @@ var Run = function () {
 
                 vec3 color = pallet(mod(float(i) / 50.0, 1.0), dist, i);
                 gl_FragColor = vec4(color, 1.0);
+            }
+
+            float dxTitle = 200.0 - gl_FragCoord.x;
+            float dyTitle = 230.0 - gl_FragCoord.y;
+            //float distTitle = sqrt(dxTitle * dxTitle + dyTitle * dyTitle);
+            float distTitle = gl_FragCoord.x;
+            if (distTitle < width / 2.0) {
+            
+                float norm = (distTitle) / (width / 2.0);
+                norm *= norm;
+                gl_FragColor += vec4(1.0-norm, 1.0-norm, 1.0-norm, 0.0);
             }
 
         }
@@ -174,14 +188,15 @@ var Run = function () {
      var mouseLocation = gl.getUniformLocation(shaderProgram, 'mouseLocation');
 
      var center = [-0.981972213, -0.282552557];
-     //gl.uniform2fv(centerLocation, new Float32Array(center));
-     //gl.uniform1f(scaleLocation, 150);
     
      window.addEventListener('mousemove', (event) => {
         gl.uniform2fv(mouseLocation, new Float32Array([event.clientX, event.clientY]));
     });
 
     var iter = 0;
+
+    //var title = document.getElementsByID("title");
+    //title.scaleLocatio
 
 	var tick = function() {
 
