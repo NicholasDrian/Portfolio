@@ -148,14 +148,14 @@ var Run = function () {
                 gl_FragColor = vec4(color, 1.0);
             }
 
-            float dxTitle = 200.0 - gl_FragCoord.x;
-            float dyTitle = 230.0 - gl_FragCoord.y;
-            //float distTitle = sqrt(dxTitle * dxTitle + dyTitle * dyTitle);
-            float distTitle = gl_FragCoord.x;
-            if (distTitle < width / 2.0) {
-            
-                float norm = (distTitle) / (width / 2.0);
+            float distTitle = max(1.2 * gl_FragCoord.x, 2.0 * (height - gl_FragCoord.y));
+            if (distTitle < height) {
+                float norm = distTitle / height;
+
                 norm *= norm;
+                norm *= norm;
+
+
                 gl_FragColor += vec4(1.0-norm, 1.0-norm, 1.0-norm, 0.0);
             }
 
