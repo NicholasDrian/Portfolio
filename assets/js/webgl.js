@@ -1,11 +1,13 @@
 var screen = document.getElementById("screen");
 var tinker1 = document.getElementById("tinker1");
+var tinker2 = document.getElementById("tinker2");
 
 var Init = function () {
     console.log("init");
 
     var screenInstance = new WebGLInstance(screen, fractalFragCode, true);
     var tinker1Instance = new WebGLInstance(tinker1, tinker1FragCode, true);
+    var tinker2Instance = new WebGLInstance(tinker2, tinker2FragCode, true);
 
 }
 
@@ -78,9 +80,9 @@ class WebGLInstance {
          gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0); 
          gl.enableVertexAttribArray(coord);
     
-         var centerLocation = gl.getUniformLocation(shaderProgram, 'center');
-         var scaleLocation = gl.getUniformLocation(shaderProgram, 'scale');
-         var heightLocation = gl.getUniformLocation(shaderProgram, 'height');
+        var centerLocation = gl.getUniformLocation(shaderProgram, 'center');
+        var scaleLocation = gl.getUniformLocation(shaderProgram, 'scale');
+        var heightLocation = gl.getUniformLocation(shaderProgram, 'height');
         var widthLocation = gl.getUniformLocation(shaderProgram, 'width');
         var timeLocation = gl.getUniformLocation(shaderProgram, "time");
         var mouseLocation = gl.getUniformLocation(shaderProgram, 'mouseLocation');

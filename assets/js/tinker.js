@@ -1,7 +1,6 @@
 var tinker1FragCode = `
 precision mediump float;
 
-
 uniform vec2 mouseLocation;
 uniform float width;
 uniform float height;
@@ -60,3 +59,78 @@ void main(void) {
 }
 
 `;
+
+var tinker2FragCode = `
+    precision mediump float;
+
+    uniform vec2 mouseLocation;
+    uniform float width;
+    uniform float height;
+    uniform float time;
+
+    float normSin(float f) {
+        return sin(f) / 2. + 1.;
+    }
+
+
+    float randomWave(float t) {
+        return 
+            (normSin(t * 1.5) +
+            normSin(t * 3.3) +
+            normSin(t * 8.5) +
+            normSin(t * 15.3) +
+            normSin(t * 27.7)) / 5.;
+            
+    }
+
+    vec4 toColor(float val, vec2 uv) {
+        val -= 0.5;
+        return vec4(fract(randomWave(val + time / 10000. + uv.x) * 3.),0.0,fract(randomWave(val + time / 12000. + uv.y) * 3.),1.0);
+    }
+
+
+    void main() {
+
+        vec2 uv = gl_FragCoord.xy / height;
+        uv /= 3.;
+
+        float val = 0.;
+        val += normSin(uv.x * 50. + time / 1000.);
+        val += normSin(uv.y * 60. + time / 9000.);
+        val += normSin(uv.x * 40. + time / 1100.);
+        val += normSin(uv.y * 30. + time / 1200.);
+        val += normSin(uv.x * 20. + time / 1000.);
+        val += normSin(uv.y * 10. + time / 9000.);
+        val += normSin(uv.x * 20. + time / 1100.);
+        val += normSin(uv.y * 30. + time / 1200.);
+        val /= 8.;
+        
+        gl_FragColor = toColor(val, uv);
+
+        float dx = gl_FragCoord.x - mouseLocation.x;
+        float dy = gl_FragCoord.y - height + mouseLocation.y;
+        float distMouse = sqrt(dx*dx + dy*dy);
+
+        dx = gl_FragCoord.x - width / 2.;
+        dy = gl_FragCoord.y - height / 2.;
+        float distCenter = sqrt(dx*dx + dy*dy);
+        
+        if (distMouse < 600.) {
+            vec4 other = vec4(gl_FragColor.y, gl_FragColor.x, 1. - gl_FragColor.x, 1.0);
+            float lerp = distMouse / 500.;
+            gl_FragColor = gl_FragColor * lerp + other * (1. - lerp);
+        }
+
+        if (distCenter < 400.) {
+            float lerp = distCenter / 400.;
+            lerp *= lerp;
+            lerp = 1. - lerp;
+            gl_FragColor += vec4(vec3(lerp), 1.0);
+        }
+
+
+
+        
+    }
+
+`
