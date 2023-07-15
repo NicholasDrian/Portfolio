@@ -37,7 +37,7 @@ void main(void) {
         float d = length(uv);
         
         vec3 col = palette(time + length(uv0) + i /3.0);
-        d = sin(d*8. + time/ 1000.)/8.;
+        d = sin(d*8. + time / 3000.)/8.;
         d = abs(d);
         d = 0.02 / d;
         finalColor += col * d;
@@ -46,7 +46,7 @@ void main(void) {
     
     finalColor = (vec3(1.0) - finalColor) * sin((dist - time / 10.) / 100.);
     
-    finalColor = fract(finalColor + vec3(gl_FragCoord.x / 1000.));
+    //finalColor = fract(finalColor + vec3(gl_FragCoord.x / 1000.));
     finalColor.r /= 3.;
     finalColor.g /= 2.;
     finalColor.b *= 2.;

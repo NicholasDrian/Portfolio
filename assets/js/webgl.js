@@ -1,6 +1,5 @@
 var screen = document.getElementById("screen");
 var tinker1 = document.getElementById("tinker1");
-var stats1 = document.getElementById("stats");
 
 var Init = function () {
     console.log("init");
@@ -98,17 +97,9 @@ class WebGLInstance {
         });
     
         var iter = 0;
-        var prev = -1;
-        var sampleRate = 10;
     
     
         var tick = function() {
-            if (iter % sampleRate == 0) { // display stats
-                var now = performance.now(); 
-                var mili = now - prev;
-                stats1.textContent =  "FPS: " + Math.round(10000000 / mili) / 1000;
-                prev = now;
-            }
     
             var shiftY = Math.sin(iter / 1000) * 0.01;
             var shiftX = Math.sin(iter / 100) * 0.001;
