@@ -15,7 +15,8 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" onload="Init();">
 
-    <canvas id="screen" height="550"> </canvas>
+    <canvas id="background" style="z-index: -2;"></canvas>
+    <canvas id="screen" height="450"> </canvas>
 
         <div class="header-content" style="margin-left:30px;">
             <br>
@@ -35,7 +36,7 @@
                 <li><a class="social-link text-light" href="https://github.com/NicholasDrian"><i class="ti-github" aria-hidden="true"></i></a>
             </li>
             </ul>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br>
 
         </div>
 
@@ -78,9 +79,9 @@
             <br><br>
                 <h3 class="font-weight-light"><b>Who am I?</b></h3>
                 <span class="line mb-5"></span>
-                <h5 class="mb-3">An Engineer</h5>
-                <p class="mt-20">I am a programing and computer graphics enthusiest. Formally, I studied arechitecture at UC Berkeley; however, after discovering programing, that became my main focus. I have merged my loves of programming and design by spending my time implementing CAD software.</p>
-                <p class="mt-20">My favorite place in the software stack is the bottom, near the hardware. Though I enjoy high level algorithmic optimization, I also spend lots of time thinking about cacheing, bit-packing, SIMD, and resultant assembly code.</p>
+                <h5 class="mb-3">I am an engineer.</h5>
+                <p class="mt-20">My focus is programming and computer graphics. Formally, I studied architecture at UC Berkeley; however, after discovering programing, that became my main focus. I have merged my loves of programming and design by investing time implementing CAD software.</p>
+                <p class="mt-20">My favorite place in the software stack is the bottom, near the hardware; Though I enjoy high level algorithmic optimization, I also spend a lot of time thinking about cacheing, bit-packing, branch prediction, SIMD, and resultant assembly code.</p>
                 <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
             </div>
             <div class="col-lg-4 about-card">
@@ -103,7 +104,7 @@
                     <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
                         <h6>Computer Graphics</h6>
-                        <p class="subtitle">My day to day includes everything from writing shaders to computational geometry.</p>
+                        <p class="subtitle">I am working on everything from writing shaders to computational geometry.</p>
                         <hr>
                     </div>
                 </div>
@@ -151,14 +152,14 @@
                             <h5 class="mb-3">
                                 <span class="text-danger">BMW</span>
                                  - Softwear Engineering Intern
-                                <span style="float: right; font-size: 14px;">Oct 2022 - Apr 2023</span>
+                                <span style="float: right; font-size: 14px;">Oct 2022 - Apr 2023, Germany</span>
                             </h5>
                             <ul>
                                 <li>
                                     Explored the graphics pipeline of BMW’s driving simulator for possible performance and fidelity optimizations.
                                 </li>
                                 <li>
-                                    Moved skeletal mesh animation onto the GPU using bone animation textures to help alleviate a CPU bottleneck
+                                    Moved skeletal mesh animation onto the GPU using bone animation textures to help alleviate a CPU bottleneck.
                                 </li>
                                 <li>
                                     Wrote an Unreal Engine utility for automating the generation of high performance MetaHuman animations.
@@ -180,7 +181,7 @@
                             </h5>
                             <ul>
                                 <li>
-                                    Created and taught a graduate course on parametric design using the plugin Grasshopper for Rhino.
+                                    Created and taught a graduate course on parametric design using the plug-in Grasshopper for Rhino.
                                 </li>
                                 <li>
                                     Presented a series of 10 lectures demonstrating a streamlined architectural workflow through CAD scripting.
@@ -203,8 +204,8 @@
                                     <b>Computer Science GPA: </b>3.85
                                 </li>
                                 <li>
-                                    <b>Relevant CourseWork: </b>Data Structures (A+), Logic (A+), Computer Architecture, Computer Graphics,
-                                    Computational Structure in Data Science, Computer Security (audited), Operating Systems (audited)
+                                    <b>Relevant Coursework: </b>Data Structures (A+), Logic (A+), Computer Architecture, Computer Graphics,
+                                    Computational Structures in Data Science, Computer Security (audited), Operating Systems (audited)
                                 </li>
                             </ul>
                             
@@ -241,10 +242,10 @@
                              <ul>
                                  <li>
                                     Created path tracing software that supports global illumination, reflection, refraction, dispersion, textures sampling with trilinear 
-                                    mip-map interpolation, and material properties such as specular, diffuse, roughness, and more.
+                                    mipmap interpolation, and material properties such as specular, diffuse, roughness, and more.
                                  </li>
                                  <li>
-                                    Achieved unbiased results through monte carlo integration while importance sampling both the BRDF and lighting.
+                                    Achieved unbiased results through Monte Carlo integration while importance sampling both the BRDF and lighting.
                                  </li>
                                  <li>
                                     Used photon mapping and statistical error metrics to support dispersion with a parametric error threshold.
@@ -257,10 +258,10 @@
                              <ul>
                                  <li>
                                     Created path tracing software that supports global illumination, reflection, refraction, dispersion, textures sampling with trilinear 
-                                    mip-map interpolation, and material properties such as specular, diffuse, roughness, and more.
+                                    mipmap interpolation, and material properties such as specular, diffuse, roughness, and more.
                                  </li>
                                  <li>
-                                    Achieved unbiased results through monte carlo integration while importance sampling both the BRDF and lighting.
+                                    Achieved unbiased results through Monte Carlo integration while importance sampling both the BRDF and lighting.
                                  </li>
                                  <li>
                                     Used photon mapping and statistical error metrics to support dispersion with a parametric error threshold.
@@ -269,13 +270,13 @@
 
                              <ul>
                                 <li>
-                                    Implementedadesktopapplicationthatbuildsprintable.gcodefroman.stlfileandvariousprintingparameters.
+                                    Implemented a desktop application that builds printable .gcode from an .stl file and various printing parameters.
                                 </li>
                                 <li>
-                                    Featuresafullymaneuverable,realtimerenderingoftheprintpathandsourcemesh
+                                    Features a fully maneuverable, real time rendering of the print path and source mesh
                                 </li>
                                 <li>
-                                    Capableofrasterizinga20,000facemeshat20fpsontheCPU.(FrombeforeIlearnedAPIssuchasOpenGL)
+                                    Capable of rasterizing a 20,000 face mesh at 20 fps on the CPU. (From before I learned APIs such as OpenGL)
                                 </li>
                                 <li>
                                     Optimized the program to process large mesh inputs using kd-trees.
@@ -350,7 +351,7 @@
 
         <div class="container text-center">
             <br><br>
-            <h2 class=" mb-5 font-weight-normal"><b>I Am Available For FreeLance</b></h2>
+            <h2 class=" mb-5 font-weight-normal"><b>I Am Available For Freelance work.</b></h2>
             <button class="btn bg-primary " ><h3><a href="#contact" class="nav-link", style="color: white;">Hire Me</a></h3></button>
             <br><br><br>
         </div>
@@ -387,7 +388,7 @@
                                 <i class="ti-mobile icon-md"></i>
                             </div>
                             <div class="col-10 ">
-                                <h6 class="d-inline">Phone : <span class="text-muted">+ (530) 386-8800</span></h6>
+                                <h6 class="d-inline">Phone : <span class="text-muted">+1 (530) 386-8800</span></h6>
                             </div>
                         </div>
                        
@@ -423,13 +424,11 @@
     <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
     
 
-    <!-- Utils js -->
-    <script src="assets/js/utils.js"></script>
-
     <!-- webgl stuff -->
     <script src="assets/js/fractal.js"></script>
     <script src="assets/js/webgl.js"></script>
     <script src="assets/js/tinker.js"></script>
+    <script src="assets/js/background.js"></script>
 
 
 </body>

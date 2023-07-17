@@ -1,19 +1,21 @@
 var screen = document.getElementById("screen");
 var tinker1 = document.getElementById("tinker1");
 var tinker2 = document.getElementById("tinker2");
+var background = document.getElementById("background");
 
 var Init = function () {
     console.log("init");
 
-    var screenInstance = new WebGLInstance(screen, fractalFragCode, true);
-    var tinker1Instance = new WebGLInstance(tinker1, tinker1FragCode, true);
-    var tinker2Instance = new WebGLInstance(tinker2, tinker2FragCode, true);
+    var screenInstance = new WebGLInstance(screen, fractalFragCode, true, false);
+    var tinker1Instance = new WebGLInstance(tinker1, tinker1FragCode, true, false);
+    var tinker2Instance = new WebGLInstance(tinker2, tinker2FragCode, true, false);
+    var backgroundInstance = new WebGLInstance(background, backgroundFragCode, true, true);
 
 }
 
 class WebGLInstance {
 
-    constructor (canvas, fragSource, matchScreenWidth) {
+    constructor (canvas, fragSource, matchScreenWidth, matchScreenHeight) {
 
         this.canvas = canvas;
         this.fragShader = fragShader;
@@ -86,6 +88,7 @@ class WebGLInstance {
         var widthLocation = gl.getUniformLocation(shaderProgram, 'width');
         var timeLocation = gl.getUniformLocation(shaderProgram, "time");
         var mouseLocation = gl.getUniformLocation(shaderProgram, 'mouseLocation');
+        var scrollLocation = gl.getUniformLocation(shaderProgram, 'scroll');
     
         var center = [-0.981972213, -0.282552557];
         
@@ -93,6 +96,7 @@ class WebGLInstance {
         var boundsGlobal = document.body.getBoundingClientRect();
         
         window.addEventListener('mousemove', (event) => {
+            
             gl.uniform2fv(mouseLocation, new Float32Array([
                 event.clientX + document.documentElement.scrollLeft - boundsLocal.left + boundsGlobal.left, 
                 event.clientY + document.documentElement.scrollTop - boundsLocal.top + boundsGlobal.top]));
@@ -108,8 +112,15 @@ class WebGLInstance {
             var scale = Math.pow(1.1, Math.sin(iter / 600) * 20);
             gl.uniform2fv(centerLocation, new Float32Array([center[0] + shiftX / scale, center[1] + shiftY / scale]));
             gl.uniform1f(scaleLocation, 150 * scale);
+
+            var scroll = document.documentElement.scrollTop;
+            gl.uniform1f(scrollLocation, scroll);
+            console.log(scroll);
     
             if (matchScreenWidth) canvas.width = window.innerWidth;
+            var body = document.body;
+            var height = Math.max( body.scrollHeight, body.offsetHeight );
+            if (matchScreenHeight) canvas.height = height;
             gl.uniform1f(heightLocation, canvas.height);
             gl.uniform1f(widthLocation, canvas.width);
             gl.uniform1f(timeLocation, performance.now());

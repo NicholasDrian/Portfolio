@@ -5,6 +5,7 @@ uniform vec2 mouseLocation;
 uniform float width;
 uniform float height;
 uniform float time;
+uniform float scroll;
 
 vec3 palette(float t) {
 
@@ -19,11 +20,16 @@ vec3 palette(float t) {
 
 void main(void) {
 
-    float dx = gl_FragCoord.x - mouseLocation.x;
-    float dy = height - gl_FragCoord.y - mouseLocation.y;
+    vec2 uv = vec2(gl_FragCoord.x, gl_FragCoord.y);
+
+
+    float dx = uv.x - mouseLocation.x;
+    float dy = height - uv.y - mouseLocation.y;
     float dist = sqrt(dx*dx + dy*dy);
+
+    uv.y += scroll;
     
-    vec2 uv = (gl_FragCoord.xy * 2.0 - vec2(width, height)) / height;
+    uv = (uv.xy * 2.0 - vec2(width, height)) / height;
 
 
     uv *= 0.2;
@@ -67,6 +73,7 @@ var tinker2FragCode = `
     uniform float width;
     uniform float height;
     uniform float time;
+    uniform float scroll;
 
     float normSin(float f) {
         return sin(f) / 2. + 1.;
@@ -91,8 +98,19 @@ var tinker2FragCode = `
 
     void main() {
 
-        vec2 uv = gl_FragCoord.xy / height;
-        uv /= 3.;
+        vec2 uv = vec2(gl_FragCoord.x, gl_FragCoord.y);
+
+        float dx = uv.x - mouseLocation.x;
+        float dy = uv.y - height + mouseLocation.y;
+        float distMouse = sqrt(dx*dx + dy*dy);
+
+        dx = uv.x - width / 2.;
+        dy = uv.y - height / 2.;
+        float distCenter = sqrt(dx*dx + dy*dy);
+
+        uv.y += scroll;
+
+        uv = uv.xy / height / 3.;
 
         float val = 0.;
         val += normSin(uv.x * 50. + time / 1000.);
@@ -107,22 +125,16 @@ var tinker2FragCode = `
         
         gl_FragColor = toColor(val, uv);
 
-        float dx = gl_FragCoord.x - mouseLocation.x;
-        float dy = gl_FragCoord.y - height + mouseLocation.y;
-        float distMouse = sqrt(dx*dx + dy*dy);
-
-        dx = gl_FragCoord.x - width / 2.;
-        dy = gl_FragCoord.y - height / 2.;
-        float distCenter = sqrt(dx*dx + dy*dy);
+        
         
         if (distMouse < 600.) {
-            vec4 other = vec4(gl_FragColor.y, gl_FragColor.x, 1. - gl_FragColor.x, 1.0);
-            float lerp = distMouse / 500.;
+            vec4 other = vec4(1. - gl_FragColor.y, 1. - gl_FragColor.x, 1. - gl_FragColor.x, 1.0);
+            float lerp = distMouse / 600.;
             gl_FragColor = gl_FragColor * lerp + other * (1. - lerp);
         }
 
-        if (distCenter < 400.) {
-            float lerp = distCenter / 400.;
+        if (distCenter < 500.) {
+            float lerp = distCenter / 500.;
             lerp *= lerp;
             lerp = 1. - lerp;
             gl_FragColor += vec4(vec3(lerp), 1.0);

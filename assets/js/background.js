@@ -1,4 +1,4 @@
-var fractalFragCode = `
+var backgroundFragCode = `
 precision highp float;
 uniform vec2 center;
 uniform vec2 mouseLocation;
@@ -86,23 +86,16 @@ void main(void) {
     if (i == MAX_ITER) gl_FragColor = vec4(1.0,1.0,1.0,1.0);
     else {
 
-        float dx = gl_FragCoord.x - mouseLocation.x;
-        float dy = gl_FragCoord.y + mouseLocation.y - height;
+        float dx = gl_FragCoord.x;
+        float dy = gl_FragCoord.y;
         float dist = sqrt(dx * dx + dy * dy);
 
         vec3 color = pallet(mod(float(i) / 50.0, 1.0), dist, i);
         gl_FragColor = vec4(color, 1.0);
     }
 
-    float distTitle = max(1.2 * gl_FragCoord.x, 2.0 * (height - gl_FragCoord.y));
-    if (distTitle < height) {
-        float norm = distTitle / height;
-
-        norm *= norm;
-        norm *= norm;
-
-        gl_FragColor += vec4(1.0-norm, 1.0-norm, 1.0-norm, 0.0);
-    }
+    gl_FragColor.xyz *= 0.1;
+    gl_FragColor.xyz = vec3(1.0) - gl_FragColor.xyz;
 
 }
 `;
