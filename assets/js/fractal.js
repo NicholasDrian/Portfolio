@@ -25,20 +25,10 @@ vec3 pallet(float t, float dist, int i) {
     if (dist < MAX_DIST_MOUSE_INFLUANCE) {
         float normalized = (MAX_DIST_MOUSE_INFLUANCE - dist) / MAX_DIST_MOUSE_INFLUANCE;
         normalized *= normalized;
-
         float wave = (sin(float(i) + time / 100.0) + 1.0) / 2.0 * normalized;
-
         vec3 res = a + b * cos( 6.28318 * (c + (t + normalized) * d));
-
-        //if (mod(float(i) + time / 100.0, 10.0) < 5.0) {
-        //    res -= vec3(normalized, normalized, normalized);
-        //}
-
-
         res += vec3(wave, wave, wave);
-
         return res;
-
     } else {
         return a + b * cos( 6.28318 * (c + t * d));
     }
