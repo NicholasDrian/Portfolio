@@ -102,7 +102,7 @@ class WebGLInstance {
                 event.clientY + document.documentElement.scrollTop - boundsLocal.top + boundsGlobal.top]));
         });
     
-        var iter = 0;
+        var iter = 1800;
     
     
         var tick = function() {
