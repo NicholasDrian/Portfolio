@@ -15,13 +15,13 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" onload="Init();">
 
-    <canvas id="background" style="z-index: -2;"></canvas>
+   <!-- <canvas id="background" style="z-index: -2;"></canvas> -->
     <canvas id="screen" height="450"> </canvas>
 
         <div class="header-content" style="margin-left:30px;">
             <br>
             <h1 class="header-title">Nick Drian</h1>
-            <h2 class="header-subtitle" >Graphics Engineer</h6>
+            <h2 class="header-subtitle" >Software Engineer</h6>
             <ul class="social-icons pt-3">
             <li>
                 <a href="assets/imgs/resume.pdf" download="Nick Drian's Resume">
@@ -79,9 +79,8 @@
             <br><br>
                 <h3 class="font-weight-light"><b>Who am I?</b></h3>
                 <span class="line mb-5"></span>
-                <h5 class="mb-3">I am an engineer.</h5>
-                <p class="mt-20">My focus is programming and computer graphics. Formally, I studied architecture at UC Berkeley; however, after discovering programing, that became my main focus. I have merged my loves of programming and design by investing time implementing CAD software.</p>
-                <p class="mt-20">My favorite place in the software stack is the bottom, near the hardware; Though I enjoy high level algorithmic optimization, I also spend a lot of time thinking about cacheing, bit-packing, branch prediction, SIMD, and resultant assembly code.</p>
+                <h5 class="mb-3">I am a software engineer.</h5>
+                <p class="mt-20">My favorite place in the software stack is the bottom, near the hardware. I enjoy thinking about low level performance details such as caching, bit-packing, computer architecture, SIMD and branch prediction. The specific area in which I have the most experience is the graphics pipeline. Im well versed in popular grahics APIs such as OpenGL and Vulkan, and I have lots of experience with the computational geomemtry and linear algebra that is prevolant in the field.</p>
                 <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
             </div>
             <div class="col-lg-4 about-card">
@@ -364,7 +363,7 @@
                 <div class="col-lg-8">
                     <div class="contact-form-card">
                         <h4 class="contact-title">Send a message</h4>
-                        <form action="">
+                        <form onsubmit="alert('Sorry, this form is temporarily down, please contact me by email or phone. Thanks!');">
                             <div class="form-group">
                                 <input  class="form-control" type="text" placeholder="Name *" required>
                             </div>

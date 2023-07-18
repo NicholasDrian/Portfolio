@@ -115,7 +115,6 @@ class WebGLInstance {
 
             var scroll = document.documentElement.scrollTop;
             gl.uniform1f(scrollLocation, scroll);
-            console.log(scroll);
     
             if (matchScreenWidth) canvas.width = window.innerWidth;
             var body = document.body;
