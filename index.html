@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with Nick Drian landing page.">
   <meta name="Nick Drian" content="Portfolio">
-  <title>Nick Drian Landing page | Free Bootstrap 4.3.x landing page</title>
+  <title>Nick Drian</title>
   <!-- font icons -->
   <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
   <!-- Bootstrap + JohnDoe main styles -->
@@ -62,7 +62,7 @@
           <img src="assets/imgs/portrait.jpeg" alt="" class="brand-img">
           <li class="brand-txt">
             <h5 class="brand-title">Nick Drian</h5>
-            <div class="brand-subtitle">Softwear Engineer</div>
+            <div class="brand-subtitle">Software Engineer</div>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -113,7 +113,7 @@
           <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
           <div class="col-10 ml-auto mr-3">
             <h6>Computer Graphics</h6>
-            <p class="subtitle">I am working on everything from writing shaders to computational geometry.</p>
+            <p class="subtitle">Everythong from GPGPU to accelerated computational geometry.</p>
             <hr>
           </div>
         </div>
@@ -121,7 +121,7 @@
           <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
           <div class="col-10 ml-auto mr-3">
             <h6>Performance Engineering</h6>
-            <p class="subtitle">I enjoy low level optimization and squeezing every last FLOP out of my processors.</p>
+            <p class="subtitle">I enjoy squeezing every last FLOPS out of my processors.</p>
             <hr>
           </div>
         </div>
@@ -129,7 +129,7 @@
           <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
           <div class="col-10 ml-auto mr-3">
             <h6>Algorithms</h6>
-            <p class="subtitle">Algorithmic analysis and optimization are my bread and butter.</p>
+            <p class="subtitle">I eat DP for breakfast.</p>
             <hr>
           </div>
         </div>
@@ -152,84 +152,6 @@
           <div class="card">
             <div class="card-header">
               <div class="mt-2">
-                <h4>Work Experience</h4>
-
-              </div>
-            </div>
-            <div class="card-body">
-
-              <h5 class="mb-3">
-                <span class="text-danger">BMW</span>
-                - Softwear Engineering Intern
-                <span style="float: right; font-size: 14px;">Oct 2022 - Apr 2023, Germany</span>
-              </h5>
-              <ul>
-                <li>
-                  Explored the graphics pipeline of BMW’s driving simulator for possible performance and fidelity
-                  optimizations.
-                </li>
-                <li>
-                  Moved skeletal mesh animation onto the GPU using bone animation textures to help alleviate a CPU
-                  bottleneck.
-                </li>
-                <li>
-                  Wrote an Unreal Engine utility for automating the generation of high performance MetaHuman animations.
-                </li>
-                <li>
-                  Created an application for generating, previewing and benchmarking GPU based animation from FBX files.
-                </li>
-                <li>
-                  Achieved 2x framerate improvement on some animation intensive benchmarks.
-                </li>
-              </ul>
-
-              <hr>
-
-              <h5 class="mb-3">
-                <span class="text-danger">UC Berkeley</span>
-                - Computational Design Instructor
-                <span style="float: right; font-size: 14px;">Spring 2021</span>
-              </h5>
-              <ul>
-                <li>
-                  Created and taught a graduate course on parametric design using the plug-in Grasshopper for Rhino.
-                </li>
-                <li>
-                  Presented a series of 10 lectures demonstrating a streamlined architectural workflow through CAD
-                  scripting.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <div class="mt-2">
-                <h4>Education</h4>
-
-              </div>
-            </div>
-            <div class="card-body">
-
-              <h5 class="mb-3"><span class="text-danger">UC Berkeley</span> 2018 - 2022</h2>
-                <ul>
-                  <li>
-                    <b>Computer Science GPA: </b>3.85
-                  </li>
-                  <li>
-                    <b>Relevant Coursework: </b>Data Structures (A+), Logic (A+), Computer Architecture, Computer
-                    Graphics,
-                    Computational Structures in Data Science, Computer Security (audited), Operating Systems (audited)
-                  </li>
-                </ul>
-
-
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div class="mt-2">
                 <h4>Projects</h4>
 
               </div>
@@ -237,15 +159,32 @@
             <div class="card-body">
 
               <h5 class="mb-1"><span class="text-danger">CAD - 3D NURBS Modeling Application</span> </h5>
-
-              <h6 class="mb-3"> <b>Languages:</b> C++, GLSL, Lua | <b>APIs:</b> OpenGL, glm, glfw, glew, ImGui, PreMake
+              <h6 class="mb-3"> <b>Languages:</b> Rust, Typescript, C++, GLSL, WGSL
               </h6>
               <ul>
                 <li>
-                  Work in progress CLI based 3D NURBS modeling software inspired by Rhino7.
+                  A few years ago, I wrote some 3D modeling software in C++. I was enjoying the project until I switched
+                  from using
+                  Windows to MacOS, and became frustrated with to complexity of porting my software between operating
+                  systems.
                 </li>
                 <li>
-                  At about 5,000 lines of extensible code, this project is an exploration of scalable CAD architecture.
+                  I decided to rewrite the project in typescript because of the superior accessibility granted by the
+                  browser. No downloads, no conditional complication, and no re writing of the build system for every
+                  OS. At around 20k lines of code, this iteration of the project is the most complete. Click <a
+                    href="https://nicholasdrian.github.io/Web-NURBS/"><b><u>HERE</u></b></a> to check out the project.
+                </li>
+                <li>
+                  After discovering that WebGPU has brought compute shaders to the browser, I decided to rewrite my
+                  software one last time, entirely on the GPU. The goal of this iteration is to eliminate all geometry
+                  streaming between RAM and VRAM, and move all heavy compute to the GPU, to achieve state of the art
+                  efficiency. My new software stack involved compiling rust to WASM (for threading support), along with
+                  thousands of lines of WGSL. This project is not entirely complete, but it already supports blazingly
+                  fast
+                  surface sampling and acceleration structure generation all on the GPU.
+                  This iteration is also much more organized, with a wasm geometry engine that exposes a high level
+                  JavaScript API.
+                  You can view the code <a href="https://github.com/NicholasDrian/web_cad"><b><u>HERE</u></b></a>.
                 </li>
               </ul>
 
@@ -292,6 +231,86 @@
 
             </div>
           </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="mt-2">
+                <h4>Work Experience</h4>
+
+              </div>
+            </div>
+            <div class="card-body">
+
+              <h5 class="mb-3">
+                <span class="text-danger">BMW</span>
+                - Softwear Engineering Intern
+                <span style="float: right; font-size: 14px;">Oct 2022 - Apr 2023, Germany</span>
+              </h5>
+              <ul>
+                <li>
+                  Explored the graphics pipeline of BMW’s driving simulator for possible performance and fidelity
+                  optimizations.
+                </li>
+                <li>
+                  Moved skeletal mesh animation onto the GPU using bone animation textures to help alleviate a CPU
+                  bottleneck.
+                </li>
+                <li>
+                  Wrote an Unreal Engine utility for automating the generation of high performance MetaHuman animations.
+                </li>
+                <li>
+                  Created an application for generating, previewing and benchmarking GPU based animation from FBX files.
+                </li>
+                <li>
+                  Achieved 2x frame rate improvement on some animation intensive benchmarks.
+                </li>
+              </ul>
+
+              <hr>
+
+              <h5 class="mb-3">
+                <span class="text-danger">UC Berkeley</span>
+                - Computational Design Instructor
+                <span style="float: right; font-size: 14px;">Spring 2021</span>
+              </h5>
+              <ul>
+                <li>
+                  Created and taught a graduate course on parametric design using the plug-in Grasshopper for Rhino.
+                </li>
+                <li>
+                  Presented a series of 10 lectures demonstrating a streamlined architectural workflow through CAD
+                  scripting.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="mt-2">
+                <h4>Education</h4>
+
+              </div>
+            </div>
+            <div class="card-body">
+
+              <h5 class="mb-3"><span class="text-danger">UC Berkeley - Architecture BA</span> <span
+                  style="float: right; font-size: 14px;">2018 - 2022</span></h2>
+
+                <ul>
+                  <li>
+                    <b>Computer Science GPA: </b>3.85
+                  </li>
+                  <li>
+                    <b>Relevant Coursework: </b>Data Structures (A+), Logic (A+), Computer Architecture, Computer
+                    Graphics,
+                    Computational Structures in Data Science, Computer Security (audited), Operating Systems (audited)
+                  </li>
+                </ul>
+
+
+
+            </div>
+          </div>
+
 
         </div>
         <div class="col-lg-3">
@@ -321,32 +340,28 @@
               </div>
             </div>
             <div class="card-body pb-2">
+              <li>Rust</li>
               <li>C++ / C</li>
               <li>Python</li>
               <li>Java</li>
-              <li>GLSL / HLSL</li>
-              <li>Java Script</li>
-              <li>x86</li>
-              <li>RISC V</li>
+              <li>GLSL / HLSL / WGSL</li>
+              <li>JavaScript / TypeScript</li>
+              <li>x86 / RISC V</li>
               <li>And More...</li>
             </div>
           </div>
           <div class="card">
             <div class="card-header">
               <div class="pull-left">
-                <h4 class="mt-2">APIs / Libraries</h4>
+                <h4 class="mt-2">Hobbies</h4>
 
               </div>
             </div>
             <div class="card-body pb-2">
-              <li>OpenGL / WebGL</li>
-              <li>Vulkan</li>
-              <li>Dear ImGui</li>
-              <li>GLM</li>
-              <li>FBX SDK</li>
-              <li>STB Image</li>
-              <li>OpenEXR</li>
-              <li>And More...</li>
+              <li>Rock Climbing</li>
+              <li>Mountaineering</li>
+              <li>Camping</li>
+              <li>Cooking</li>
             </div>
           </div>
         </div>
